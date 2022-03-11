@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+
+void vetor(int* vet1, int* vet2) {
+    int i, j, k=0;
+    int vet3[10];
+    
+    for(i=0; i<10; i++)
+        for(j=0; j<10; j++)
+            if(vet1[i] == vet2[j]) {
+                vet3[k] = vet1[i];
+                k++;
+            }
+    
+    printf("A intercesão entre eles é: ");
+    for(i=0; i<k; i++)
+        printf("%d, ", vet3[i]);
+}
+
+int main() {
+	
+	setlocale(LC_ALL, "Portuguese_Brazil");
+	
+    int v1[10];
+    int v2[10];
+    int i;
+
+    for(i=0; i<10; i++) {
+        printf("Preenche o vetor X[%d]\n", i);
+        scanf("%d",&v1[i]);
+        printf("Preenche o vetor Y[%d]\n", i);
+        scanf("%d",&v2[i]);
+    }
+    
+    vetor(v1, v2);
+    return 0;
+}
